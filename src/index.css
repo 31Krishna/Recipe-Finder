@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Laila:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body h1 {
+    font-family: "Alice", serif;
+    font-weight: 900;
+    font-style: normal;
+  }
+.p-2{
+    font-family: "Laila";
+    font-weight: 700;
+    font-style: normal;
+  }
+  

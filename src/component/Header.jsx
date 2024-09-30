@@ -126,8 +126,8 @@ const RecipeFinder = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black p-6">
-      <h1 className="text-5xl font-bold text-center text-red-600">
+    <div className="min-h-screen bg-[#A3C16E] p-6">
+      <h1 className="text-5xl font-bold text-center text-[#2B2D42]">
         Recipe Finder
       </h1>
 
@@ -140,13 +140,13 @@ const RecipeFinder = () => {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search for recipes"
-          className="p-3 border border-gray-300 rounded-md w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400"
+          className="p-3 border border-gray-300  rounded-md w-full shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2B2D42]"
         />
 
         <select
           value={filter}
           onChange={(e) => setFilter(e.target.value)}
-          className="p-3  border-gray-300 rounded-md w-full md:w-1/3 shadow-sm focus:outline-none focus:ring-2 focus:ring-red-400"
+          className="p-3  border-gray-300 rounded-md w-full md:w-1/3 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#2B2D42]"
         >
           <option value="">Filter by category</option>
           {categories.map((category) => (
@@ -158,21 +158,21 @@ const RecipeFinder = () => {
 
         <button
           type="submit"
-          className="relative h-[50px] w-full  md:w-1/3 overflow-hidden border rounded-md border-red-700 bg-white text-red-700 shadow-2xl transition-all before:absolute before:left-0 before:right-0 before:top-0 before:h-0 before:w-full before:bg-red-900 before:duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0 after:w-full after:bg-red-900 after:duration-500 hover:text-white hover:shadow-red-900 hover:before:h-2/4 hover:after:h-2/4"
+          className="relative h-[50px] w-full  md:w-1/3 overflow-hidden rounded-md bg-white text-black shadow-2xl transition-all before:absolute before:left-0 before:right-0 before:top-0 before:h-0 before:w-full before:bg-[#c8fd6e] before:duration-300 after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0 after:w-full after:bg-[#c8fd6e] after:duration-500 hover:text-black hover:shadow-[#fcc191ac] hover:before:h-2/4 hover:after:h-2/4"
         >
           <span className="relative z-10">Search</span>
         </button>
       </form>
 
       {loading && <p className="text-center text-lg">Loading...</p>}
-      {error && <p className="text-center text-red-500">{error}</p>}
+      {error && <p className="text-center text-[#2B2D42]">{error}</p>}
 
       {!loading && !error && recipes.length > 0 && (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-6 p-2">
           {recipes.map((recipe, index) => (
             <div
               key={index}
-              className="p-4 border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-black"
+              className="p-4 border rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 bg-[#F4F1DE]"
             >
               <img
                 src={recipe.strMealThumb}
@@ -180,17 +180,17 @@ const RecipeFinder = () => {
                 className="h-40 w-full mb-12 object-cover rounded-lg capitalize hover:scale-[1.05]"
               />
               <div className="p-2">
-                <h3 className="mt-2 text-lg font-bold text-red-600">
+                <h3 className="mt-2 text-lg font-bold text-[#2B2D42]">
                   {recipe.strMeal}
                 </h3>
-                <p className="text-white font-semibold">
+                <p className="text-[#2B2D42] font-semibold">
                   Category: {recipe.strCategory}
                 </p>
                 <a
                   href={recipe.strSource || `https://www.themealdb.com/meal/${recipe.idMeal}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white italic hover:text-zinc-500 mt-2 block"
+                  className="text-[#2B2D42] italic hover:text-zinc-500 mt-2 block"
                 >
                   View Recipe
                 </a>
